@@ -1,0 +1,86 @@
+:root {
+    --font: sans-serif;
+    --size: 0.85rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightsalmon;
+    border: 2px solid black;
+    padding: 0.8rem;
+    box-shadow: 5px 8px 8px gray;
+    border-radius: 5px;
+    width: 24rem;
+    height: 16rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 16rem;
+}
+
+input[type=text] {
+    height: 3rem;
+}
+
+input, button {
+    border: 1px solid black;
+    padding: 4px;
+    margin: 10px 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+input:focus {
+    background-color: lightgray;
+}
+
+.loading {
+    background-color: gray;
+    height: 2rem;
+    width: 2rem;
+    animation: rotation 4s infinite ease-in-out both;
+    display: none;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
