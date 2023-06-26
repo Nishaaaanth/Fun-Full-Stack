@@ -54,8 +54,6 @@ function handleclick(e) {
 
     const valid = validation(data);
 
-    console.log(valid);
-
     if (valid.emailTest && valid.passwordTest) {
         form.style.display = "none";
         header.innerText = "Loading...";
