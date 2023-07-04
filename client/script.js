@@ -42,6 +42,7 @@ function handleclick(e) {
     e.preventDefault();
     cleanUp();
 
+    const formData = new FormData(e.target);
     const emailData = email.value
     const passwordData = password.value
     const messageData = message.value
@@ -59,6 +60,17 @@ function handleclick(e) {
         header.innerText = "Loading...";
 
         loading.style.display = "block";
+
+        fetch("/login", {
+            method: "POST",
+            body: formData
+        }).then(
+            res => res.json()
+        ).then(
+            result => console.log(result)
+        ).catch(
+            err => console.error(err)
+        )
     }
     else if ((valid.emailTest === false) && (valid.passwordTest === false)) {
         errPrompt("email");
